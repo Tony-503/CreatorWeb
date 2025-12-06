@@ -1,0 +1,33 @@
+/* Small overrides to ensure PrimeReact button severity colors show
+   when other global styles (pico, app CSS) conflict. These use
+   theme CSS variables and !important to regain control over colors.
+*/
+.p-button {
+  background-color: var(--primary-color, #06b6d4) !important;
+  color: var(--primary-color-text, #ffffff) !important;
+  border-color: transparent !important;
+}
+.p-button.p-button-success {
+  background-color: var(--green-500, #22c55e) !important;
+  color: var(--primary-color-text, #ffffff) !important;
+  border-color: transparent !important;
+}
+.p-button.p-button-danger {
+  background-color: var(--red-500, #ff3d32) !important;
+  color: var(--primary-color-text, #ffffff) !important;
+  border-color: transparent !important;
+}
+.p-button.p-button-warning {
+  background-color: var(--yellow-500, #eab308) !important;
+  color: var(--primary-color-text, #ffffff) !important;
+  border-color: transparent !important;
+}
+.p-button.p-button-secondary {
+  background-color: var(--gray-500, #6b7280) !important;
+  color: var(--primary-color-text, #ffffff) !important;
+  border-color: transparent !important;
+}
+.p-button .p-button-icon-left,
+.p-button .p-button-icon-right {
+  color: inherit !important;
+}
