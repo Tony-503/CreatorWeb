@@ -98,32 +98,7 @@ const CreatorCard = ({ creator }) => {
     }, [creator.id]);
 
     // Fetch the creator record's author/display name from a profiles table (if available)
-    useEffect(() => {
-        let mounted = true;
-        const fetchCreatorAuthor = async () => {
-            if (!creator?.user_id) return;
-            try {
-                const { data, error } = await supabase
-                    .from('profiles')
-                    .select('display_name')
-                    .eq('id', creator.user_id)
-                    .single();
-                if (!mounted) return;
-                if (error) {
-                    // No profiles table or no display_name found; clear any previous value
-                    setCreatorAuthorName(undefined);
-                } else {
-                    setCreatorAuthorName(data?.display_name || undefined);
-                }
-            } catch (err) {
-                if (mounted) setCreatorAuthorName(undefined);
-            }
-        };
-        fetchCreatorAuthor();
-        return () => {
-            mounted = false;
-        };
-    }, [creator?.user_id]);
+
 
 
     // Update like count
